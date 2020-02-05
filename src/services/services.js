@@ -7,8 +7,12 @@ export const authServiceURL = `http://localhost:5151${DOMAIN_NAME}`;
 
 export const callAPI = (config) => {
   const requestConfig = { ...config };
-  if (config.auth) {
+  if (requestConfig.auth) {
+    delete requestConfig.auth;
+    if (!requestConfig.headers) {
+      requestConfig.headers = {};
+    }
     requestConfig.headers['Authorization'] = localStorage.getItem('authToken');
   }
-  return axios().catch(error => ({ ...error.response }));
+  return axios(requestConfig).catch(error => ({ ...error.response }));
 };
