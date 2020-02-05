@@ -4,14 +4,19 @@ import { Switch, Route } from 'react-router-dom';
 
 import config from '../config';
 import {
-  AuthRouter
+  AuthRouter,
+  Dashboard
 } from './routes';
+import LoggedInContainer from './auth/loggedInContainer';
 
 export class Router extends Component {
   render() {
     return (
       <Switch>
         <Route path="/auth" component={AuthRouter}/>
+        <LoggedInContainer>
+          <Route path="/" component={Dashboard}/>
+        </LoggedInContainer>
       </Switch>
     );
   }

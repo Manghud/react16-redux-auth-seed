@@ -16,10 +16,16 @@ const composeEnhancers = globalConfig.displayReduxTools ?
 
 const middleware = [routerMiddleware(routerHistory), sagaMiddleware];
 
-
 export const store = createStore(
   createRootReducer(routerHistory),
   {},
-  composeEnhancers(applyMiddleware(...middleware)));
+  composeEnhancers(applyMiddleware(...middleware))
+);
+
+store.subscribe(()=>{
+  const state = store.getState();
+  const authToken = state.auth && state.auth.authToken;
+  localStorage.setItem('authToken', authToken || null);
+});
 
 sagaMiddleware.run(rootSaga);

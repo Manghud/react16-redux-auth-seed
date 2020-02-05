@@ -30,7 +30,13 @@ export default generateReducer(initialState, {
     return { ...state, loading: true, loginError: null };
   },
   [AUTH_LOGIN_SUCCESS](state, action){
-    return { ...state, loading: false, user: action.payload, loginError: null };
+    return {
+      ...state,
+      loading: false,
+      loginError: null,
+      user: action.payload.user,
+      authToken: action.payload.auth
+    };
   },
   [AUTH_LOGIN_ERROR](state, action){
     return { ...state, loading: false, user: null, loginError: action.payload };
