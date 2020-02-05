@@ -1,15 +1,18 @@
-import { hot } from 'react-hot-loader/root';
 import React from 'react';
+import { Provider, ReactReduxContext } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+
 import Router from './components/router';
-import { Provider } from 'react-redux';
 import { store, routerHistory } from './store';
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router routerHistory={routerHistory}/>
+    <Provider store={store} context={ReactReduxContext}>
+      <ConnectedRouter history={routerHistory} context={ReactReduxContext}>
+        <Router/>>
+      </ConnectedRouter>
     </Provider>
   );
 }
 
-export default hot(App);
+export default App;

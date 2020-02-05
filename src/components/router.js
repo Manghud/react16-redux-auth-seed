@@ -1,26 +1,19 @@
-import React from 'react';
+import { hot } from 'react-hot-loader/root';
+import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { ConnectedRouter } from 'connected-react-router';
-import PropTypes from 'prop-types';
 
 import {
   AuthRouter
 } from './routes';
 
-class Router extends React.Component {
+export class Router extends Component {
   render() {
     return (
-      <ConnectedRouter history={this.props.routerHistory}>
-        <Switch>
-          <Route path="/auth" component={AuthRouter}/>
-        </Switch>
-      </ConnectedRouter>
+      <Switch>
+        <Route path="/auth" component={AuthRouter}/>
+      </Switch>
     );
   }
 }
 
-Router.propTypes = {
-  routerHistory: PropTypes.object.isRequired
-};
-
-export default Router;
+export default hot(Router);
