@@ -1,6 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
-import Router from './router';
+import Router from './components/router';
 import { Provider } from 'react-redux';
 import { store, routerHistory } from './store';
 

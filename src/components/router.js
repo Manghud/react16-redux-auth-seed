@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import PropTypes from 'prop-types';
 
 import {
-  TimeDisplay
+  AuthRouter
 } from './routes';
 
 class Router extends React.Component {
@@ -12,7 +12,7 @@ class Router extends React.Component {
     return (
       <ConnectedRouter history={this.props.routerHistory}>
         <Switch>
-          <Route path="/" component={TimeDisplay}/>
+          <Route path="/auth" component={AuthRouter}/>
         </Switch>
       </ConnectedRouter>
     );

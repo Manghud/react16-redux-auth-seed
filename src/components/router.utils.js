@@ -1,7 +1,7 @@
 import React from 'react';
 import Loadable from 'react-loadable';
 
-import Loading from './components/common/loaders/loading';
+import Loading from './common/loaders/loading';
 const TIMEOUT = 5000;
 const DELAY = 200;
 

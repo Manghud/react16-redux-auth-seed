@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects';
-import timeSagas from './time';
+import authSagas from './auth';
 
 export default function* root() {
   yield all([
-    timeSagas
+    authSagas
   ]);
 }
