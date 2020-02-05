@@ -1,7 +1,15 @@
-const { getLoader, loaderByName, throwUnexpectedConfigError } = require('@craco/craco');
+const {
+  getLoader,
+  loaderByName,
+  ESLINT_MODES,
+  throwUnexpectedConfigError
+} = require('@craco/craco');
 const CSS_MODULE_LOCAL_IDENT_NAME = '[local]___[hash:base64:5]';
 
 module.exports = {
+  eslint: {
+    mode: ESLINT_MODES.file
+  },
   jest: {
     configure: require('./jest.config.js')
   },
