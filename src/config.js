@@ -6,12 +6,12 @@ const development = {
 
 const staging = {
   displayReduxTools: true,
-  domainName: ''
+  domainName: process.env.REACT_APP_DOMAIN_NAME
 };
 
 const production = {
   displayReduxTools: false,
-  domainName: ''
+  domainName: process.env.REACT_APP_DOMAIN_NAME
 };
 
 const environmentConfigs = {
