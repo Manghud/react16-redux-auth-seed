@@ -10,8 +10,9 @@ import globalConfig from './config';
 export const routerHistory = createBrowserHistory();
 const sagaMiddleware = createSagaMiddleware();
 
-const composeEnhancers = globalConfig.displayReduxTools ? (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose)
-  : compose;
+const composeEnhancers = globalConfig.displayReduxTools ?
+  (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose) :
+  compose;
 
 const middleware = [routerMiddleware(routerHistory), sagaMiddleware];
 

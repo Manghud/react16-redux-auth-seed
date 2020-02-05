@@ -9,7 +9,7 @@ function App() {
   return (
     <Provider store={store} context={ReactReduxContext}>
       <ConnectedRouter history={routerHistory} context={ReactReduxContext}>
-        <Router/>>
+        <Router/>
       </ConnectedRouter>
     </Provider>
   );
