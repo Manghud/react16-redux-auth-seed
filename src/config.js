@@ -1,6 +1,7 @@
 const development = {
   displayReduxTools: true,
-  domainName: ''
+  domainName: '',
+  isDevEnvironment: true
 };
 
 const staging = {
