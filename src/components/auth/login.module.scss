@@ -1,0 +1,49 @@
+.loginContainer{
+    position: relative;
+    left: 37.5%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: center;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    width: 100%;
+    min-height: 16em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 20px;
+    padding-right: 20px;
+    :global(.ui.input) {
+        margin-top: .75em;
+        margin-bottom: .75em;
+    }
+    :global(.ui.header) {
+        text-align: center;
+        margin-bottom: .75em;
+    }
+    :global(.ui.button) {
+        margin-top: .75em;
+    }
+    .formError {
+        color: red;
+        font-size: 0.75em;
+        &.centered{
+            text-align: center;
+        }
+    }
+}
+
+.navLink {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1em;
+    &:hover{
+        cursor: pointer;
+    }
+}

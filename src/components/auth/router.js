@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Signup from './signup';
+import Login from './login';
 
 export class AuthRouter extends React.Component {
   render() {
@@ -9,6 +10,7 @@ export class AuthRouter extends React.Component {
       <React.Fragment>
         <Switch>
           <Route path={`${this.props.match.path}/signup`} component={Signup}/>
+          <Route path={`${this.props.match.path}/login`} component={Login}/>
         </Switch>
       </React.Fragment>
     );
