@@ -3,6 +3,7 @@ services:
   frontend-app:
     image: nginx:mainline-alpine
     container_name: 'frontend-app'
+    restart: always
     # No need to export port since we are using Traefik gateway
     # ports:
     #   - "80:80"
