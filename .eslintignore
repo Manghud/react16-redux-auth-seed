@@ -1,0 +1,3 @@
+src/semantic/**
+node_modules/**
+build/**
