@@ -4,8 +4,8 @@ import { push } from 'connected-react-router';
 
 class LoggedInContainer extends Component {
   render() {
-    const { user } = this.props;
-    if (!user) {
+    const { user, authToken } = this.props.auth;
+    if (!user || !authToken) {
       this.props.push('/auth/login');
       return null;
     }
@@ -15,9 +15,7 @@ class LoggedInContainer extends Component {
 
 const mapStateToProps = (state, props) => {
   const auth = state.auth || {};
-  return {
-    user: auth.user
-  };
+  return { auth };
 };
 
 export default connect(
