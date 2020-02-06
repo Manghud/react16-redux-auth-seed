@@ -23,7 +23,7 @@
     "start": "REACT_APP_ENVIRONMENT=development node_modules/.bin/craco start",
     "start:staging": "REACT_APP_ENVIRONMENT=staging node_modules/.bin/craco start",
     "start:production": "REACT_APP_ENVIRONMENT=production node_modules/.bin/craco start",
-    "build": "react-scripts build",
+    "build": "node_modules/.bin/craco build",
     "build:staging": "REACT_APP_ENVIRONMENT=staging node_modules/.bin/craco build",
     "build:production": "REACT_APP_ENVIRONMENT=production node_modules/.bin/craco build",
     "test": "node_modules/.bin/craco test",
