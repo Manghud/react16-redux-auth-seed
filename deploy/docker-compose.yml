@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  frontend-app:
+    image: nginx:mainline-alpine
+    container_name: 'frontend-app'
+    # No need to export port since we are using Traefik gateway
+    # ports:
+    #   - "80:80"
+    volumes:
+      - '../build/:/usr/share/nginx/html'
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    networks:
+      - traefik
+    labels:
+      # Explicitly tell Traefik to expose this container
+      - "traefik.enable=true"
+      # The domain the service will respond to
+      - "traefik.http.routers.app.rule=Host(`app.${REACT_APP_DOMAIN_NAME}`)"
+      # Allow request only from the predefined entry point named "web". Comment if SSL is setup on Traefik
+      - "traefik.http.routers.app.entrypoints=web"
+      # Uncomment if SSL is setup on Traefik
+      # - "traefik.http.routers.app.entrypoints=websecure"
+      # - "traefik.http.routers.app.tls.certresolver=traefiktlschallenge"
+networks:
+  traefik:
+    external: true
+    name: traefik

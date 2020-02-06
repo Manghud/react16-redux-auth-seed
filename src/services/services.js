@@ -3,7 +3,7 @@ import config from '../config';
 
 const DOMAIN_NAME = config.domainName;
 
-export const authServiceURL = `http://localhost:5151${DOMAIN_NAME}`;
+export const authServiceURL = `http://auth-service.${DOMAIN_NAME}`;
 
 export const callAPI = (config) => {
   const requestConfig = { ...config };
